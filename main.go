@@ -7,10 +7,12 @@ import (
 )
 
 func main() {
+
+	// *****    TURNO MAÑANA    ******
 	// ################################### //
 	//Ejercicio 1
-	//sueldoTotal := ejercicios.Ejercicio1()
-	//fmt.Println("SUELDO: ", sueldoTotal)
+	sueldoTotal := ejercicios.Ejercicio1()
+	fmt.Println("SUELDO: ", sueldoTotal)
 
 	// ################################### //
 	//Ejercicio 2
@@ -26,6 +28,7 @@ func main() {
 
 	// ################################### //
 	//Ejercicio 5
-	fmt.Println(ejercicios.Ejercicio5())
+	//fmt.Println(ejercicios.Ejercicio5())
 
+	// *****    TURNO TARDE    ******
 }
