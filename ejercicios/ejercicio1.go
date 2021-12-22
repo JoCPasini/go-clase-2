@@ -23,7 +23,6 @@ func Ejercicio1() float64 {
 	} else {
 		return sueldo
 	}
-
 }
 
 func Ejercicio2(notas ...float64) (float64, error) {
