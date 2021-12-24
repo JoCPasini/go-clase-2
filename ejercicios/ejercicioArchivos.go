@@ -48,22 +48,22 @@ func LeerTexto() {
 		fmt.Println("**********")
 		for _, linea := range lineaPorLinea {
 			if linea != "" {
-				fmt.Println("Linea: ", linea)
 				idAux := strings.Split(linea, ",")
 				fmt.Println("Id:", idAux[0])
 				fmt.Println("Precio:", idAux[1])
 				fmt.Println("Cantidad:", idAux[2])
-				precio, err := strconv.ParseInt(idAux[1], 10, 64)
-				cantidad, err := strconv.ParseInt(idAux[2], 10, 64)
-				if err != nil {
-					fmt.Println("Precio Total: $", precio*cantidad)
-				}
-				listoParaGuardar := fmt.Sprintf("%v %v %v\n", idAux[0], precio, cantidad)
+				precio, _ := strconv.ParseFloat(idAux[1], 64)
+				cantidad, _ := strconv.ParseFloat(idAux[2], 64)
+				precioTotal := precio * cantidad
+				fmt.Println("Precio Total: $", precio*cantidad)
+				listoParaGuardar := fmt.Sprintf("%v,%v,%v\n", idAux[0], precio, cantidad)
+				archivoConPreciosFinales := fmt.Sprintf("%v,%v,%v\n", idAux[0], precioTotal, cantidad)
 
-				data = append(data, listoParaGuardar...)
-				os.WriteFile("./myFileCSV.csv", data, 0644)
-				fmt.Println("*** Archivo Completo ***")
-				fmt.Println(string(data))
+				// myFileCSV.csv uardar queda el archivo idéntico.
+				// myFileCSVprecioActualizado.csv queda el archivo con los precios finales.
+				fmt.Println("LISTO PARA GUARDAR", string(listoParaGuardar))
+				os.WriteFile("./myFileCSV.csv", []byte(listoParaGuardar), 0644)
+				os.WriteFile("./myFileCSVprecioActualizado.csv", []byte(archivoConPreciosFinales), 0644)
 			}
 		}
 

@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/JosePasiniMercadolibre/go-clase-2/ejercicios"
 )
 
 func main() {
@@ -32,14 +34,14 @@ func main() {
 	//ejercicios.EscribirTexto()
 	//fmt.Println("Hola")
 	//ejercicios.GuardarArchivoCSV()
-	//ejercicios.LeerTexto()
+	ejercicios.LeerTexto()
 	//fmt.Println("Texto escrito")
 
 	// *****    TURNO TARDE - CONCURRENCIA   ******
-	user := usuario{"Jose", "Pasini", 26, "fdas", "fdsa@gmail.com"}
-	fmt.Printf("%vUSUARIO:\n", user)
-	user = CambiarNombre(&user)
-	fmt.Printf("%vUSUARIO:", user)
+	//user := usuario{"Jose", "Pasini", 26, "fdas", "fdsa@gmail.com"}
+	//fmt.Printf("%vUSUARIO:\n", user)
+	//user = CambiarNombre(&user)
+	//fmt.Printf("%vUSUARIO:", user)
 
 }
 
